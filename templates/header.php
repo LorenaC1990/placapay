@@ -14,9 +14,9 @@
         <header>
             <h1>PlacaPay</h1>
             <nav>
-                <a href="index.php?page=home">Inicio</a>
-                <a href="index.php?page=ingreso">Ingreso</a>
-                <a href="index.php?page=reporte">Reporte</a>
+                <a href="index.php?page=home" class="<?php echo $_GET['page'] == 'home' ? 'nav--current' : '' ?>">Inicio</a>
+                <a href="index.php?page=ingreso" class="<?php echo $_GET['page'] == 'ingreso' ? 'nav--current' : '' ?>">Ingreso</a>
+                <a href="index.php?page=reporte" class="<?php echo $_GET['page'] == 'reporte' ? 'nav--current' : '' ?>">Reporte</a>
                 <a href="index.php?page=logout">Salir</a>
             </nav>
         </header>
