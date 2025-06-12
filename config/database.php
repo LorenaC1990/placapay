@@ -1,10 +1,10 @@
 <?php
 class Database
 {
-    private $host     = "localhost:3308";
+    private $host     = "localhost:3306";
     private $db_name  = "local_loreproyecto";
     private $username = "root";
-    private $password = "";
+    private $password = "123";
     public $conn;
 
     public function getConnection()

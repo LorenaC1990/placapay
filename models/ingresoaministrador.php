@@ -14,15 +14,9 @@ class Admin
 
     public function login($nombre, $contrasena)
     {
-        $query = "SELECT * FROM " . $this->table_name . " WHERE nombre_usuario = :nombre AND contrasena = :contrasena";
+        $query = "SELECT * FROM " . $this->table_name . " WHERE `nombre_usuario`= '$nombre' and `contrasena`= '$contrasena'";
         $stmt = $this->conn->prepare($query);
-        $stmt->execute([
-            ':nombre' => $nombre,
-            ':contrasena' => $contrasena
-        ]);
-
-        return $stmt->rowCount() > 0;
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 }
-}
-
-

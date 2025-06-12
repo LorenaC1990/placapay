@@ -1,16 +1,6 @@
-<?php
-
-// Verificar si el usuario está logueado
-if (!isset($_SESSION['usuario_logueado'])) {
-    header("Location: ?page=login");
-    exit;
-}
-?>
-
-    <?php if (!isset($ingresos)) { ?>
-        <p>No hay ingresos.</p>
-    <?php } else { ?>
-
+<?php if (!isset($ingresos)) { ?>
+    <p>No hay ingresos.</p>
+<?php } else { ?>
     <h2>Lista de ingresos</h2>
 
     <table>
@@ -32,7 +22,7 @@ if (!isset($_SESSION['usuario_logueado'])) {
                     <td align="right">
                         <a href="?page=editar_ingreso&id=<?php echo $ingreso['id']; ?>" class="btn">Editar</a>
                         <a href="?page=retiro&id=<?php echo $ingreso['id']; ?>" class="btn">Marcar salida</a>
-                        <a href="?page=eliminar_ingreso&id=<?php echo $ingreso['id']; ?>" class="btn"onclick="return confirm('¿Seguro que quieres eliminar este ingreso?');">Eliminar</a>
+                        <a href="?page=eliminar_ingreso&id=<?php echo $ingreso['id']; ?>" class="btn">Eliminar</a>
                     </td>
                 </tr>
             <?php endforeach; ?>

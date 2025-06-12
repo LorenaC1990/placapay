@@ -17,5 +17,6 @@
                 <a href="index.php?page=home">Inicio</a>
                 <a href="index.php?page=ingreso">Ingreso</a>
                 <a href="index.php?page=reporte">Reporte</a>
+                <a href="index.php?page=logout">Salir</a>
             </nav>
         </header>

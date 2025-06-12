@@ -4,7 +4,12 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-require_once __DIR__ . '/templates/header.php';
+require_once __DIR__ . '/routes/web.php';
+$session = $_SESSION ? $_SESSION['auth'] : null;
+
+if ($session) {
+    require_once __DIR__ . '/templates/header.php';
+}
 
 $route = include __DIR__ . '/routes/web.php';
 
@@ -19,4 +24,6 @@ if ($route['controller']) {
     include __DIR__ . "/views/{$route['view']}.php";
 }
 
-require_once __DIR__ . '/templates/footer.php';
+if ($session) {
+    require_once __DIR__ . '/templates/footer.php';
+}
